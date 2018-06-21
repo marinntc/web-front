@@ -1,0 +1,18 @@
+<div class="mb-5 row">
+    <div class="col-md-4 mt-2" *ngFor="let produto of produt">
+        <div class="card col-md-12" style="width: 18rem;">
+            <img class="card-img-top" src="assets/imgproduto.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><b>{{produto.nome}}</b> </h5>
+                <p class="card-text">{{produto.descricao}}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{produto.marca}}</li>
+                  </ul>
+                <h4 class="card-text">
+                    <b>R$ {{produto.preco}}.00</b>
+                </h4>
+                <button type="button" class="btn btn-success" (click)="incluirProdutoNoCarrinho(produto)">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </div>
+</div>

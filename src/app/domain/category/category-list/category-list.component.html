@@ -1,0 +1,26 @@
+<h2>Categoria</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Funções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <th scope="row">{{ category.id }}</th>
+      <td>{{ category.nome }}</td>
+      <td>
+        <a [routerLink]="['/category/view/', category.id]">
+          <i class="fa fa-eye" aria-hidden="true" style="color:black"></i>
+        </a>
+        <a class="btn btn-default" [routerLink]="['/category/form/', category.id]">
+          <i class="fa fa-pencil" style="color:black"></i>
+         </a>
+         <a (click)="delete(category.id, i)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+      </td>      
+    </tr>
+  </tbody>
+  <a href="category/form"><button class="btn btn-second" type="submit" >Adicionar nova</button></a>
+</table>
